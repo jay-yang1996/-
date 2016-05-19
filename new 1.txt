@@ -1,0 +1,33 @@
+#include <stdio.h>
+main()
+{
+ int Find_Number(int Number);
+ int number=1;
+ printf("--------------------------------\n");
+ printf("一千以内的完数为：\n");  
+ while(number<=1000)
+ {
+   Find_Number(number);
+   number++;
+ }
+}
+int Find_Number(int Number)//定义寻找完数的函数 
+{
+ int i,count=0,j=0,SonNumber[50];//数组的调用 
+ for(i=1;i<Number;i++)
+ {
+  if(Number%i==0)
+  {
+   SonNumber[j]=i;
+   j++;
+  }
+ }
+ for(i=0;i<j;i++)
+ {
+   count+=SonNumber[i];
+ }
+ if(Number==count)
+ {
+  printf("%d\n",Number);
+ }
+}
